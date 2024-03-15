@@ -1,0 +1,1 @@
+from .fig2latex import fig2latex

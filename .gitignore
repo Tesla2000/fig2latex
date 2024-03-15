@@ -1,0 +1,9 @@
+/docs/_build/
+/dist/
+/test_upload.sh
+/upload.sh
+/sphinx_setup.sh
+/setup.cfg
+/pyproject.toml
+/build_docs.sh
+/requirements.txt
