@@ -17,7 +17,6 @@ class TestFig2Latex(unittest.TestCase):
         self.assertEqual(fig2latex(figure_path), expected_output)
 
     def test_with_caption_and_label(self):
-        # Test with caption and label provided
         figure_path = Path("example.png")
         label = "fig:example"
         caption = "Example Figure"
@@ -39,6 +38,16 @@ class TestFig2Latex(unittest.TestCase):
             + r"\end{figure}"
         )
         self.assertEqual(fig2latex(figure_path, centered=False), expected_output)
+
+    def test_placement(self):
+        figure_path = Path("example.png")
+        expected_output = (
+            r"\begin{figure}[h]" + "\n"
+            + r"\centering" + "\n"
+            + r"\includegraphics{" + str(figure_path) + "}\n"
+            + r"\end{figure}"
+        )
+        self.assertEqual(fig2latex(figure_path, placement='h'), expected_output)
 
 
 if __name__ == '__main__':

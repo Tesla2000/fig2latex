@@ -32,7 +32,7 @@ def fig2latex(
         '\\begin{figure}\\n\\includegraphics{example.png}\\n\\caption{Example Figure}\\n\\label{fig:example}\\n\\end{figure}'
     """
     return (
-        r"\begin{figure}" + (placement if placement is not None else "") +
+        r"\begin{figure}" + (("[" + placement + "]") if placement is not None else "") +
         "\n"
         + (r"\centering" "\n" if centered else "")
         + r"\includegraphics"
